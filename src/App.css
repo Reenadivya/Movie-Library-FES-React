@@ -1,0 +1,897 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+/* Desktop Nav */
+
+.nav {
+  font-family: "League Spartan";
+  max-width: 1600px;
+  background-color: #2b2b2b;
+  width: 100%;
+  height: 120px;
+  max-height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav__logo--img {
+  width: 30%;
+}
+
+.right__nav {
+  display: flex;
+}
+
+.nav__link {
+  color: #e5e5e5;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.link__hover {
+  display: inline-block;
+  position: relative;
+}
+
+.link__hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #a37acc;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.link__hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Mobile Nav */
+.cart-icon {
+  display: none;
+}
+.btn__menu {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.fa-bars {
+  font-size: 24px;
+  color: #e5e5e5;
+}
+
+.menu__backdrop {
+  position: absolute;
+  background-color: #2b2b2b;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: all 300ms ease;
+  opacity: 0;
+  transform: translate(100%);
+}
+
+.menu--open {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.menu--open .menu__backdrop {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0);
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu__list {
+  padding: 32px 0;
+}
+
+.menu__link {
+  color: #e5e5e5;
+  font-size: 40px;
+}
+
+.btn__menu--close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 8px;
+  color: #fff;
+}
+
+/* LANDING PAGE */
+
+#landing__page {
+  font-family: "Raleway";
+  height: calc(100vh - 120px);
+  background-color: #2b2b2b;
+  padding-top: 40px;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing__page--header {
+  font-size: 40px;
+  color: #e5e5e5;
+  text-align: center;
+}
+
+.landing__page--subheader {
+  margin-top: 54px;
+  font-size: 32px;
+  color: #e5e5e5;
+}
+
+.explore__movies-btn {
+  width: 100%;
+  margin-top: 40px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 0 !important;
+}
+
+.popcorn__img {
+  margin-top: 16px;
+  transform: scaleX(-1);
+  width: 15%;
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.purple {
+  color: #a37acc;
+}
+
+button {
+  width: 20%;
+  padding: 8px;
+  margin-left: 8px;
+  border-radius: 6px;
+  border: none;
+  background-color: #5f47b3;
+  color: #e5e5e5;
+  font-family: "League Spartan";
+}
+
+/* FEATURES */
+
+#features {
+  max-width: 100vw;
+  position: relative;
+}
+
+#featured__movies {
+  min-height: 600px;
+  background-color: #2b2b2b;
+}
+
+#features:after,
+#features:before {
+  background: url("./assets/wave.svg");
+  content: "";
+  position: absolute;
+  width: 101vw;
+  height: 12vw;
+  left: 0;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#features:before {
+  transform: translateY(-100%);
+  top: 1px;
+  z-index: 0;
+}
+
+#features:after {
+  transform: translateY(100%) rotate(180deg);
+  bottom: 1px;
+}
+
+.features__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4a4a4a;
+}
+
+.features__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.features__title {
+  font-family: "Raleway";
+  font-size: 32px;
+  margin: 24px 0;
+  color: #e5e5e5;
+}
+
+.features__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature {
+  padding: 0 24px;
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature__para {
+  text-align: center;
+  max-width: 280px;
+  font-family: "League Spartan";
+  font-size: 16px;
+  color: #fff;
+  line-height: 20px;
+}
+
+.feature__img {
+  border: 3px solid #b592d3;
+  color: #824dd6;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.feature__subtitle {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-family: "Raleway";
+  color: #e5e5e5;
+}
+
+.feature:last-child {
+  margin-bottom: 16px;
+}
+
+/* FETAURED MOVIES */
+
+.featured__movies-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured__movies-header {
+  text-align: center;
+  font-size: 40px;
+  color: #a37acc;
+  margin-bottom: 24px;
+  margin-top: 120px;
+  font-family: "Raleway";
+  z-index: 100;
+}
+
+.movie__list {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+}
+
+.movie__item {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center;
+  width: 300px;
+}
+
+.movie__item-img {
+  width: 70%;
+  border-radius: 8px;
+}
+
+.movie__item-description {
+  font-family: "League Spartan";
+  padding-top: 24px;
+}
+
+.movie__item-description {
+  padding-top: 16px;
+  width: 70%;
+  color: #e5e5e5;
+  line-height: 24px;
+}
+
+/* OWL CAROUSEL */
+
+.title {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.img {
+  height: 260px;
+  width: 100%;
+}
+
+.owl-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+  margin-top: 16px !important;
+  color: #fff !important;
+  transform: translateY(-50%) !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+}
+
+.owl-carousel .movie__item {
+  background-color: #1d1d1d;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+}
+
+.owl-carousel .movie__item img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.owl-carousel .owl-lazy {
+  opacity: 0;
+}
+
+.owl-carousel .owl-lazy.loaded {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.movie__list {
+  position: relative;
+}
+
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+  background-color: #555555ab;
+}
+
+.owl-prev {
+  left: 0;
+}
+
+.owl-next {
+  right: 0;
+}
+
+/* TOP RATED CATEGORIES */
+.toprated__title {
+  font-size: 40px;
+  font-family: "Raleway";
+  margin: 24px 0;
+  color: #e5e5e5;
+}
+.toprated__link {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toprated__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+/* SEARCH PAGE */
+#search__form {
+  background-color: #4b4b4b;
+  min-height: 100vh;
+}
+.search__form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 24px;
+}
+.search__form--header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+.search__form--title {
+  font-family: "Raleway";
+  font-size: 40px;
+  padding: 0 16px;
+  color: #e5e5e5;
+}
+.magic-wand {
+  font-size: 24px;
+  color: #f5c422;
+}
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+  width: 320px;
+}
+
+input {
+  width: 80%;
+  border-radius: 6px;
+  border: none;
+  background-color: #f2f2f2;
+  color: #000000;
+  padding-left: 8px;
+  font-size: 16px;
+  width: 450px;
+  max-width: 600px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 20%;
+  padding: 8px;
+  margin-left: 8px;
+  border-radius: 6px;
+  border: none;
+  background-color: #5f47b3;
+  color: #e5e5e5;
+}
+
+#filter {
+  margin-left: 8px;
+  border-radius: 6px;
+}
+
+.movie__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+}
+
+.movie {
+  width: 300px;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  font-family: "League Spartan";
+  line-height: 24px;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  color: #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+  margin-top: 0;
+}
+
+.movie-info span {
+  background-color: #0a192f;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.overview {
+  background-color: #5f47b3;
+  color: #e5e5e5;
+  padding: 2rem;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+.red {
+  color: red;
+}
+
+.overview {
+  background-color: #5f47b3;
+  color: #e5e5e5;
+  padding: 2rem;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+
+.movie__item-description:hover .overview {
+  transform: translateY(0);
+}
+/* ABOUT PAGE */
+
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #4b4b4b;
+  height: calc(100vh - 200px);
+}
+
+.about__header {
+  margin-bottom: 24px;
+  font-size: 48px;
+  color: #824dd6;
+  font-family: "Raleway";
+}
+
+.about__para {
+  width: 60%;
+  color: #e5e5e5;
+  line-height: 32px;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 16px;
+  font-family: "League Spartan";
+}
+
+/* FOOTER */
+footer {
+  font-family: "League Spartan";
+  min-height: 200px;
+  background-color: #2b2b2b;
+  padding-top: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.footer__left {
+  color: #e5e5e5;
+  margin-right: 12px;
+}
+
+.footer__left-text {
+  font-size: 28px;
+  text-align: left;
+}
+
+.footer__right {
+  color: #e5e5e5;
+  margin-left: 12px;
+  text-align: right;
+}
+
+.social__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social__link {
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.social__link a {
+  color: #e5e5e5;
+}
+
+.fab {
+  font-size: 24px;
+  color: #e5e5e5;
+  padding-bottom: 12px;
+}
+
+/* CART PAGE */
+.cart__empty {
+  background-color: #4b4b4b;
+  font-family: "Raleway";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  height: calc(100vh - 200px);
+}
+.shopping-cart {
+  color: #a37acc;
+  font-size: 30px;
+}
+
+.cart__empty--text {
+  margin-top: 16px;
+  font-size: 32px;
+  color: #e5e5e5;
+}
+
+.cart-btn {
+  width: 100%;
+  margin: 24px 0 0 0;
+  padding: 16px 24px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* MOVIE INFO */
+#movie__info {
+  background-color: #4b4b4b;
+  height: 80vh;
+}
+
+.movie__info--row {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+}
+
+.movie__info-fig {
+  width: 50%;
+}
+.movie__info-img {
+  width: 100%;
+  padding: 16px;
+  border-radius: 25px;
+}
+
+.movie__img--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.movie__info--container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  height: 400px;
+  padding-top: 16px;
+  width: 50%;
+}
+
+.movie__info--title {
+  font-family: "Raleway";
+  font-size: 40px;
+  color: #a37acc;
+}
+
+.movie__info--release {
+  font-family: "League Spartan";
+  color: #e5e5e5;
+  padding-top: 12px;
+}
+
+.movie__info--para {
+  font-family: "League Spartan";
+  color: #fff;
+  padding: 40px 16px 0 0;
+  line-height: 32px;
+  font-size: 24px;
+}
+
+.movie__info--top {
+  display: flex;
+  padding-top: 32px;
+  align-items: center;
+}
+
+.fa-arrow {
+  padding-right: 24px;
+}
+
+.movie__link {
+  font-family: "Raleway";
+  font-size: 20px;
+  color: #e5e5e5;
+}
+
+/* CATEGORIES */
+#categories__main {
+  min-height: 100vh;
+  background-color: #4b4b4b;
+}
+
+.categories__container {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* SKELETON LOADING STATE */
+
+.skeleton-box {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  overflow: hidden;
+  background-color: #dddbdd;
+  margin-bottom: 16px;
+}
+
+.skeleton-box::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  -webkit-animation: shimmer 2s infinite;
+  animation: shimmer 2s infinite;
+  content: "";
+}
+@-webkit-keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 678px) {
+  .btn__menu {
+    display: block;
+  }
+
+  .right__nav {
+    display: none;
+  }
+
+  .cart-icon {
+    display: block;
+    padding-right: 16px;
+  }
+}
