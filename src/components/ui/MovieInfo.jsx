@@ -8,7 +8,6 @@ import Skeleton from "./Skeleton";
 function MovieInfo() {
   const POSTER_PATH = "https://image.tmdb.org/t/p/w500";
   const { id } = useParams();
-  console.log(id);
 
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);

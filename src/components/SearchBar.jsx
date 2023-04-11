@@ -44,8 +44,6 @@ function SearchBar() {
     filteredData = filteredData.sort((a, b) => b.vote_average - a.vote_average);
   }
 
-  console.log("Data from Search Results: ", data?.slice(0, 8));
-
   return (
     <div className="search__form-container">
       <div className="search__form--header-container">

@@ -7,7 +7,6 @@ import Skeleton from "../components/ui/Skeleton";
 function Categories() {
   const [data, setData] = useState(null);
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     async function fetchCategory() {
@@ -16,8 +15,6 @@ function Categories() {
     }
     fetchCategory();
   }, []);
-
-  console.log(data);
 
   return (
     <section id="categories__main">

@@ -22,8 +22,6 @@ function FeaturedMovies() {
     fetchData();
   }, []);
 
-  console.log("Featured Movies", data);
-
   const options = {
     items: 3,
     margin: 20,
