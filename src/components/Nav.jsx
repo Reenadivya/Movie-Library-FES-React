@@ -70,7 +70,7 @@ function Nav() {
             </Link>
           </li>
           <li className="menu__list">
-            <Link to="/cart" className="menu__link" onClick={closeMenu}>
+            <Link to="/search" className="menu__link" onClick={closeMenu}>
               Search
             </Link>
           </li>

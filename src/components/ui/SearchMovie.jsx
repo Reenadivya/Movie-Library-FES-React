@@ -21,7 +21,7 @@ function SearchMovie({ data, loading }) {
     <div className="movie">
       {loading ? (
         <>
-          <Link to={`/books/${data?.id}`}>
+          <Link to={`/movies/${data?.id}`}>
             <figure className="book__img--wrapper">
               <Skeleton width="300px" height="450px" borderRadius="8px" />
             </figure>
@@ -35,7 +35,7 @@ function SearchMovie({ data, loading }) {
         </>
       ) : (
         <>
-          <Link to={`/books/${data?.id}`}>
+          <Link to={`/movies/${data?.id}`}>
             <figure className="book__img--wrapper">
               <img
                 className="movie__item-img"

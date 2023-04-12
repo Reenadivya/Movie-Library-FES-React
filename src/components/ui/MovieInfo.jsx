@@ -41,9 +41,9 @@ function MovieInfo() {
             </figure>
           </div>
           <div className="movie__info--container">
-            <Skeleton width="485px" height="47px" borderRadius="8px" />
+            <Skeleton width="350px" height="47px" borderRadius="8px" />
             <Skeleton width="94px" height="17px" borderRadius="8px" />
-            <Skeleton width="696px" height="128px" borderRadius="8px" />
+            <Skeleton width="300px" height="128px" borderRadius="8px" />
           </div>
         </div>
       </section>
