@@ -26,6 +26,7 @@ a {
 
 li {
   list-style: none;
+  position: relative;
 }
 
 /* Desktop Nav */
@@ -40,6 +41,7 @@ li {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 
 .nav__logo--img {
@@ -146,6 +148,37 @@ li {
   color: #fff;
 }
 
+.cart__length {
+  background-color: red;
+  color: white;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  right: -4px;
+  pointer-events: none;
+}
+.cart__length--mobile {
+  background-color: red;
+  color: white;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 42px;
+  right: 8px;
+  pointer-events: none;
+  display: none !important;
+}
 /* LANDING PAGE */
 
 #landing__page {
@@ -579,6 +612,11 @@ button {
 
 .movie-info h3 {
   margin-top: 0;
+  padding: 0 12px;
+}
+
+.movie-info p {
+  padding: 0 12px;
 }
 
 .movie-info span {
@@ -633,6 +671,24 @@ button {
 .movie__item-description:hover .overview {
   transform: translateY(0);
 }
+
+.price {
+  color: #a37acc;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.movie__info--btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.atc-btn {
+  width: 80%;
+  cursor: pointer;
+}
 /* ABOUT PAGE */
 
 #about {
@@ -659,6 +715,166 @@ button {
   text-align: center;
   margin-top: 16px;
   font-family: "League Spartan";
+}
+
+/* 
+
+  CART 
+    
+*/
+
+#books__body {
+  background-color: #4b4b4b;
+  font-family: "League Spartan";
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cart__header {
+  background-color: #7342d6;
+  margin: 0 24px;
+  padding: 8px 16px;
+  color: white;
+  display: flex;
+}
+
+.cart__item {
+  margin: 24px;
+  display: flex;
+  padding-right: 8px;
+}
+
+.cart__title {
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.cart__book {
+  width: 60%;
+  display: flex;
+}
+
+.cart__body {
+  width: 800px;
+  max-width: 900px;
+}
+
+.cart__quantity {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.cart__total {
+  width: 100%;
+  max-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 18px;
+}
+
+.cart__input {
+  padding: 8px;
+  width: 60px;
+}
+
+.cart__book--img {
+  width: 100%;
+  max-width: 90px;
+  max-height: 128px;
+}
+
+.cart__book--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 16px;
+}
+
+.cart__book--title {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.cart__book--price {
+  margin-bottom: 16px;
+}
+
+.cart__book--remove {
+  background-color: transparent;
+  color: #cf0000;
+  border: none;
+  padding-left: 0;
+  width: 48px;
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 24px;
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  font-size: 16px;
+}
+
+.total__item {
+  font-size: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total__sub-total {
+  border-top: 2px solid #7342d6;
+  padding-top: 24px;
+}
+
+.total__price {
+  font-weight: bold;
+}
+
+.cart__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart__empty--img {
+  padding: 40px;
+  max-width: 400px;
+}
+
+.btn__checkout {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 0;
+  margin-bottom: 16px;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.faShopping-icon {
+  font-size: 48px;
+  color: #e5e5e5;
+  margin-bottom: 24px;
+}
+
+.price {
+  font-family: "Raleway";
 }
 
 /* FOOTER */
@@ -791,6 +1007,13 @@ footer {
   width: 50%;
 }
 
+.movie__info--container .atc-btn {
+  margin-top: 16px;
+  padding: 16px 16px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 .movie__info--title {
   font-family: "Raleway";
   font-size: 40px;
@@ -904,6 +1127,19 @@ footer {
     display: block;
     padding-right: 16px;
   }
+  .cart__length {
+    display: none;
+  }
+  .cart__length--mobile {
+    display: block !important;
+    display: flex !important;
+  }
+  .cart {
+    width: 80%;
+  }
+  .cart__body {
+    width: 80%;
+  }
 }
 
 @media (max-width: 720px) {
@@ -995,7 +1231,32 @@ footer {
     text-align: center;
   }
 }
+@media (max-width: 580px) {
+  .cart__book--title {
+    margin-bottom: 8px;
+  }
+  .cart__input {
+    width: 40px;
+    margin-top: 12px;
+  }
+  .cart__item {
+    flex-direction: column;
+  }
+}
 @media (max-width: 420px) {
+  .movie__info--top {
+    padding-top: 8px;
+  }
+  .movie__info--row {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  .movie__info--container {
+    width: 100%;
+    padding-top: 0;
+    align-items: center;
+  }
   .features__title {
     display: flex;
     justify-content: center;
@@ -1044,11 +1305,12 @@ footer {
   }
   .movie__info--title {
     font-size: 24px;
-    padding-top: 20px;
+    padding-top: 12px;
   }
   .movie__info--para {
     font-size: 16px;
     padding-top: 12px;
+    display: none;
   }
   .movie__info-fig {
     width: 100%;

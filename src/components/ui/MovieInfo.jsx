@@ -5,7 +5,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { fetchMovieInfo } from "../../Data";
 import Skeleton from "./Skeleton";
 
-function MovieInfo() {
+function MovieInfo({ addItemToCart }) {
   const POSTER_PATH = "https://image.tmdb.org/t/p/w500";
   const { id } = useParams();
 
@@ -76,6 +76,15 @@ function MovieInfo() {
           <h2 className="movie__info--title">{data?.title}</h2>
           <h3 className="movie__info--release">{data?.release_date}</h3>
           <p className="movie__info--para">{data?.overview}</p>
+
+          <button
+            className="atc-btn"
+            onClick={() => {
+              addItemToCart({ ...data, id: id });
+              console.log(data);
+            }}>
+            Add To Cart
+          </button>
         </div>
       </div>
     </section>

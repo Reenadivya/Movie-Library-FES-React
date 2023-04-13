@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import NavLogo from "../assets/door movie (2).svg";
 
-function Nav() {
+function Nav({ numberOfItems }) {
   function openMenu() {
     document.body.classList += " menu--open";
   }
@@ -45,6 +45,9 @@ function Nav() {
           <Link className="nav__link link__hover" to="/cart">
             <FontAwesomeIcon icon={faShoppingBasket} />
           </Link>
+          {numberOfItems > 0 && (
+            <span className="cart__length">{numberOfItems}</span>
+          )}
         </li>
       </ul>
 
@@ -54,10 +57,14 @@ function Nav() {
       <Link className="nav__link cart-icon" to="/cart">
         <FontAwesomeIcon icon={faShoppingBasket} />
       </Link>
+      {numberOfItems > 0 && (
+        <span className="cart__length--mobile">{numberOfItems}</span>
+      )}
       <div className="menu__backdrop">
         <button className="btn__menu btn__menu--close" onClick={closeMenu}>
           <FontAwesomeIcon icon={faTimes} className="fa-bars" />
         </button>
+
         <ul className="menu__links">
           <li className="menu__list">
             <Link to="/" className="menu__link" onClick={closeMenu}>

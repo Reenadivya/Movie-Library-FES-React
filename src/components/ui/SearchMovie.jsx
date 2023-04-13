@@ -44,16 +44,18 @@ function SearchMovie({ data, loading }) {
               />
             </figure>
           </Link>
-          <div className="movie-info">
-            <h3>{!data?.title ? data?.name : data?.title}</h3>
-            <span className={rateClass}>
-              {data?.vote_average === 0 ? "0" : data?.vote_average.toFixed(1)}
-              /10
-            </span>
-          </div>
-          <div className="overview">
-            <h3>Overview</h3>
-            {data?.overview}
+          <div className="movie__info--btn">
+            <div className="movie-info">
+              <h3>{!data?.title ? data?.name : data?.title}</h3>
+
+              <span className={rateClass}>
+                {data?.vote_average === 0 ? "0" : data?.vote_average.toFixed(1)}
+                /10
+              </span>
+            </div>
+            <Link to="/cart">
+              <button className="atc-btn">Add To Cart</button>
+            </Link>
           </div>
         </>
       )}
